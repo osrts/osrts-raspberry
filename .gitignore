@@ -1,0 +1,5 @@
+__pycache__/*
+config.ini
+times.data
+*backup.txt
+*backup.csv
