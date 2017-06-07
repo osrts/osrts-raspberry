@@ -46,3 +46,11 @@ Multiple options can be given to program.py:
  # Additional remarks
 
  * Our Raspberry PI have two small leds to indicate that it is connected to the internet and that it is sending data.
+
+ # License
+[MIT](https://github.com/osrts/osrts-backend/blob/master/LICENSE)
+
+# Authors
+
+* Guillaume Deconinck
+* Wojciech Grynczel
