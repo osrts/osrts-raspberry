@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# Guillaume Deconinck & Grynczel Wojciech
+
 # Program launched by program.py
 
 import time

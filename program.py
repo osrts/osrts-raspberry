@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Guillaume Deconinck & Grynczel Wojciech
+
 ##########################################################
 ### This file is the point of entry of the application ###
 ##########################################################
@@ -44,7 +46,7 @@ online = True
 silent = False
 # Check arguments
 try:
-    opts, args = getopt.getopt(sys.argv[1:],'f:obsc')
+    opts, args = getopt.getopt(sys.argv[1:], 'f:obsc')
     for opt, arg in opts:
         if opt == '-f':
             print("***Option : Fake Reader")
@@ -108,7 +110,7 @@ def run_config_server():
     config_server.main()
 
 if server:
-    config_thread = Thread(target = run_config_server, args=[])
+    config_thread = Thread(target=run_config_server, args=[])
     config_thread.daemon = True
     config_thread.start()
 
@@ -160,7 +162,7 @@ def show_textual_output():
     print('')
     # Line 13 (last)
     print('\x1b[0;37;44m EXIT: CTRL+C'+' '*59+'\x1b[0m')
-    
+
 
 def clear_cursor_position():
     print('\033[13A', end='')

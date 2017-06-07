@@ -1,3 +1,7 @@
+# Guillaume Deconinck & Grynczel Wojciech
+
+# Instantiated by program.py
+
 from collections import deque
 from threading import Condition
 import configparser

@@ -1,3 +1,7 @@
+# Guillaume Deconinck & Grynczel Wojciech
+
+# Program launched by program.py
+
 from flask import Flask, render_template, request, url_for, redirect, flash
 import configparser
 import requests
@@ -64,7 +68,3 @@ def save():
 
 def main():
     config_server.run(debug=False, host='0.0.0.0', port=5000)
-
-#if __name__ == '__main__':
-# TODO: disable debug mode
-#    config_server.run(debug=True, host='0.0.0.0')
