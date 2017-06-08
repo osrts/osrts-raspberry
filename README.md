@@ -18,13 +18,15 @@ The next step is to install the two dependencies of this projet, which are
 
 * [Pyserial](https://pythonhosted.org/pyserial/)
 * [Flask](https://github.com/pallets/flask)
+* [Requests](http://docs.python-requests.org/en/master/)
 
 Those dependencies are installed thanks to the Python package manager, aka pip.
 Type the following commands to install both dependencies:
 
 ```
-pip install pyserial
-pip install flask
+$ pip install pyserial
+$ pip install flask
+$ pip install requests
 ```
 
 # Launch
