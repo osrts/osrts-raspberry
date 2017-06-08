@@ -25,6 +25,7 @@ Type the following commands to install both dependencies:
 ```
 pip install pyserial
 pip install flask
+pip install requests
 ```
 
 # Launch
