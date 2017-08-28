@@ -2,6 +2,7 @@
 
 # Program launched by program.py
 
+import pytz
 from datetime import datetime, date
 import serial
 from threading import Thread,Condition
@@ -35,7 +36,8 @@ class FakeTagReader(Thread):
                 continue
             self.model.get_value('condition').acquire()
             data={
-                'timestamp': datetime.now().isoformat(),
+                'timestamp': datetime.now(pytz.timezone('Europe/Brussels')).isoformat(),
+                #'timestamp': datetime.now().isoformat(),
                 'checkpoint_id': self.model.get_value('config')['Checkpoint']['num'],
                 'tag':{
                     'num': random.randint(1,240),
