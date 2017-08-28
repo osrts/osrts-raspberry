@@ -37,14 +37,12 @@ class FakeTagReader(Thread):
             self.model.get_value('condition').acquire()
             data={
                 'timestamp': datetime.now(pytz.timezone('Europe/Brussels')).isoformat(),
-                #'timestamp': datetime.now().isoformat(),
                 'checkpoint_id': self.model.get_value('config')['Checkpoint']['num'],
                 'tag':{
                     'num': random.randint(1,12),
                     'color': random.choice(['Orange', 'Bleu'])
                 }
             }
-            print(data)
             self.model.get_value('data_queue').append(data)
             #print("Scan "+str(data['tag']['num']) + "(" + data['tag']['color'] +")     (" + str(self.counter + 1)+ "/"+ str(self.iterations)+ ")")
             # Save the queue to file

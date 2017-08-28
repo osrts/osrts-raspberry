@@ -2,6 +2,7 @@
 
 # Program launched by program.py
 
+import pytz
 from datetime import datetime, date
 import serial
 from threading import Thread,Condition
@@ -53,8 +54,7 @@ class TagReader(Thread):
                             if self.check_tag(tag, tag_id):
                                 tag_num = self.tag_type(tag_id)[0]
                                 tag_color = self.tag_type(tag_id)[1]
-                                print("Scanned tag :  "+str(tag_num) + " (" + tag_color + ")")
-                                time = {'timestamp': datetime.now().isoformat(), 'checkpoint_id': self.model.get_value('config')['Checkpoint']['num'], 'tag': { 'num': tag_num, 'color': tag_color }}
+                                time = {'timestamp': datetime.now(pytz.timezone('Europe/Brussels')).isoformat(), 'checkpoint_id': self.model.get_value('config')['Checkpoint']['num'], 'tag': { 'num': tag_num, 'color': tag_color }}
                                 self.model.get_value('data_queue').append(time)
                                 # Save the queue to file
                                 pickle.dump( self.model.get_value('data_queue'), open( "times.data", "wb" ) )
