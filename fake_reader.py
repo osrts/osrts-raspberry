@@ -40,7 +40,7 @@ class FakeTagReader(Thread):
                 #'timestamp': datetime.now().isoformat(),
                 'checkpoint_id': self.model.get_value('config')['Checkpoint']['num'],
                 'tag':{
-                    'num': random.randint(1,240),
+                    'num': random.randint(1,12),
                     'color': random.choice(['Orange', 'Bleu'])
                 }
             }
