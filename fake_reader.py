@@ -44,6 +44,7 @@ class FakeTagReader(Thread):
                     'color': random.choice(['Orange', 'Bleu'])
                 }
             }
+            print(data)
             self.model.get_value('data_queue').append(data)
             #print("Scan "+str(data['tag']['num']) + "(" + data['tag']['color'] +")     (" + str(self.counter + 1)+ "/"+ str(self.iterations)+ ")")
             # Save the queue to file
