@@ -60,6 +60,8 @@ class DataSender(Thread):
                 pickle.dump( self.model.get_value('data_queue'), open( "times.data", "wb" ) )
                 LedController().fast_blink(18)
             elif response.status_code == 409 or response.status_code == 404 or response.status_code == 406:
+                # Errors related to the tag (not found, not assigned, already a time for it)
+                pickle.dump( self.model.get_value('data_queue'), open( "times.data", "wb" ) )
                 LedController().fast_blink(18)
                 LedController().fast_blink(18)
                 self.model.get_value('errors').add(str(response.text))
